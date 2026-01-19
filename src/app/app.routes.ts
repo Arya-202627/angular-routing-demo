@@ -4,10 +4,12 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductDetailsComponent } from './products/product-details.component';
 import { authGuard } from './guards/auth.guard';
+import { ExercisesComponent } from './exercises/exercises.component';
 
 export const routes: Routes = [
     // 1. Basic Routes
     { path: '', component: HomeComponent, title: 'Home' },
+    { path: 'exercises', component: ExercisesComponent, title: 'Student Exercises' },
     { path: 'about', component: AboutComponent, title: 'About' },
     { path: 'contact', component: ContactComponent, title: 'Contact' },
 

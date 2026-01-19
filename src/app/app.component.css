@@ -52,3 +52,16 @@
         opacity: 1;
     }
 }
+
+.nav-link.special-link {
+    background: rgba(255, 142, 83, 0.1);
+    color: #FF8E53;
+    border: 1px solid rgba(255, 142, 83, 0.2);
+}
+
+.nav-link.special-link:hover,
+.nav-link.special-link.active-link {
+    background: rgba(255, 142, 83, 0.2);
+    color: #FF8E53;
+    border-color: #FF8E53;
+}
