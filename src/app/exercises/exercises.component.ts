@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-exercises',
-    standalone: true,
-    imports: [RouterLink],
-    template: `
+  selector: 'app-exercises',
+  standalone: true,
+  imports: [RouterLink],
+  template: `
     <div class="page-container">
       <h1>🛠️ Student Exercises</h1>
       <p class="subtitle">Time: 15 Minutes. Hands-on practice to master routing.</p>
@@ -27,6 +27,7 @@ import { RouterLink } from '@angular/router';
               <li><strong>Test:</strong> Click the link. Does it load without refreshing the page?</li>
             </ol>
             <div class="hint">🎯 Goal: Understand basic navigation and component creation.</div>
+            <a routerLink="/about" class="demo-link">👁️ View Concept Demo (Basic Page)</a>
           </div>
         </div>
 
@@ -43,6 +44,7 @@ import { RouterLink } from '@angular/router';
               <li><strong>Display Data:</strong> Inside the component, try to display the value of <code>catName</code> on the screen.</li>
             </ol>
             <div class="hint">💡 Hint: You can reuse <code>ProductDetailsComponent</code> or create a new <code>CategoryComponent</code>.</div>
+            <a routerLink="/products/1" [queryParams]="{category: 'demo'}" class="demo-link">👁️ View Concept Demo (Route Params)</a>
           </div>
         </div>
 
@@ -60,6 +62,7 @@ import { RouterLink } from '@angular/router';
               <li><strong>Verify:</strong> Try to click "Users" in the navbar. It should be blocked because the guard returns false.</li>
             </ol>
             <div class="hint">🔒 Goal: Learn how to protect routes from unauthorized access.</div>
+            <a routerLink="/admin" class="demo-link">👁️ View Concept Demo (Protected Route)</a>
           </div>
         </div>
 
@@ -75,13 +78,15 @@ import { RouterLink } from '@angular/router';
               <li><strong>Update Wildcard:</strong> Change the <code>**</code> route to show <code>NotFoundComponent</code> instead of redirecting to Home.</li>
               <li><strong>Test:</strong> Type <code>/random-gibberish</code> in the URL bar. It should show your new 404 page.</li>
             </ol>
+             <!-- No specific demo for 404 page as it redirects, but could link to home as current behavior -->
+             <a routerLink="/non-existent-route" class="demo-link">👁️ View Current Behavior (Redirects Home)</a>
           </div>
         </div>
 
       </div>
     </div>
   `,
-    styles: [`
+  styles: [`
     .page-container {
       max-width: 800px;
       margin: 0 auto;
@@ -139,6 +144,23 @@ import { RouterLink } from '@angular/router';
       letter-spacing: 1px;
       font-weight: bold;
       color: #aaa;
+    }
+
+    .demo-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .demo-link:hover {
+      background: var(--primary-color, #ff6b6b);
+      transform: translateX(5px);
     }
 
     h2 {
